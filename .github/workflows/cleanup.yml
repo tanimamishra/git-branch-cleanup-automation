@@ -1,0 +1,29 @@
+name: Cleanup Stale Branches
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'   # Runs every Sunday
+  workflow_dispatch:      # Allows manual run
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Run cleanup script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_OWNER: your_github_username
+          REPO_NAME: git-branch-cleanup-automation
+        run: python cleanup.py
