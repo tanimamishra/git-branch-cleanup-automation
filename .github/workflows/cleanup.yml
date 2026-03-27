@@ -23,7 +23,7 @@ jobs:
 
       - name: Run cleanup script
         env:
-          GITHUB_TOKEN: ${{ secrets.My_token }}
+          GITHUB_TOKEN: ${{ secrets.MY_SECRET }}
           REPO_OWNER: tanimamishra
           REPO_NAME: git-branch-cleanup-automation
         run: python cleanup.py
