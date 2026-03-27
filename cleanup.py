@@ -11,7 +11,7 @@ OWNER = os.getenv("REPO_OWNER")
 REPO = os.getenv("REPO_NAME")
 
 HEADERS = {
-    "Authorization": f"token {TOKEN}"
+    "Authorization": f"Bearer {TOKEN}"
 }
 
 # Set stale threshold (for testing keep 0 or 1 day)
