@@ -15,7 +15,8 @@ OWNER = os.getenv("REPO_OWNER")
 REPO = os.getenv("REPO_NAME")
 
 HEADERS = {
-    "Authorization": f"Bearer {TOKEN}"
+    "Authorization": f"Bearer {TOKEN}",
+    "Accept": "application/vnd.github+json"
 }
 
 # Set stale threshold (for testing keep 0 or 1 day)
